@@ -14,7 +14,7 @@ A Boilerplate for a Simple Express Web Application build in Docker.
 
 ## Clone
 ```
-git clone git@github.com:jansanchez/nocker-app.git
+git clone git@github.com:jansanchez/nocker-wheezy-app.git
 ```
 
 ## How to use with Docker Compose
