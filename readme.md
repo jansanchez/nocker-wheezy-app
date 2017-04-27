@@ -26,7 +26,7 @@ How do I know my linux username?
 whoami
 ```
 
-Go to `./docker/compose/supply.yml` and edit the line 9, replacing `your_host_user` for your host username
+Go to `./docker/compose/supply.yml` and edit the line 9, replacing `your_host_user` for your linux username
 ```
 1: version: '2'
 2:
