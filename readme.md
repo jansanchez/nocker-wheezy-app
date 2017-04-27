@@ -1,6 +1,6 @@
-# **nocker-wheezy**
+# **nocker-wheezy-app**
 
-A Boilerplate of Project with Node.js
+A Boilerplate for a NodeJS Project build in Docker
 
 ## Clone
 ```
@@ -8,6 +8,27 @@ git clone git@github.com:jansanchez/nocker-app.git
 ```
 
 ## How to use with Docker Compose
+
+### Set your local user
+
+How do I know my linux username?
+```
+whoami
+```
+
+Go to `./docker/compose/supply.yml` and edit the line 9, replacing `your_host_user` for your host username
+```
+1: version: '2'
+2:
+3: services:
+4:   deps:
+5:     image: js/node
+6:     command: yarn install
+7:     volumes:
+8:       - ~/yarn_cache/:/tmp/cache/yarn/
+9:       - ../../source/:/home/**your_host_user**/app/
+```
+
 
 ### Build & Install dependencies
 ```
