@@ -1,6 +1,16 @@
 # **nocker-wheezy-app**
 
-A Boilerplate for a NodeJS Project build in Docker
+A Boilerplate for a Simple Express Web Application build in Docker.
+
+*Includes:*
+- Docker
+- Docker Compose
+- NodeJS
+- Yarn
+- Nodemon
+- ES2015
+- Makefile
+
 
 ## Clone
 ```
@@ -26,7 +36,7 @@ Go to `./docker/compose/supply.yml` and edit the line 9, replacing `your_host_us
 6:     command: yarn install
 7:     volumes:
 8:       - ~/yarn_cache/:/tmp/cache/yarn/
-9:       - ../../source/:/home/**your_host_user**/app/
+9:       - ../../source/:/home/your_host_user/app/
 ```
 
 
