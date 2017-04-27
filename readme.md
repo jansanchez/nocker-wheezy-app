@@ -19,7 +19,7 @@ git clone git@github.com:jansanchez/nocker-app.git
 
 ## How to use with Docker Compose
 
-### Set your local user
+### Set your local user (Very Important)
 
 How do I know my linux username?
 ```
