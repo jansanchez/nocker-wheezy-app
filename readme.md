@@ -16,7 +16,7 @@ A Boilerplate for a Simple Express Web Application build in Docker.
 git clone git@github.com:jansanchez/nocker-wheezy-app.git
 ```
 
-## How to use with Docker Compose
+## How to use with Docker Compose (video)
 
 [![How to use the docker image nocker-wheezy?](http://img.youtube.com/vi/8KwZsF7bcfo/maxresdefault.jpg)](http://www.youtube.com/watch?v=8KwZsF7bcfo "How to use the docker image nocker-wheezy?")
 
