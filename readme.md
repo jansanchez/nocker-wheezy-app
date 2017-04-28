@@ -11,7 +11,7 @@ A Boilerplate for a Simple Express Web Application build in Docker.
 - ES2015
 - Makefile
 
-[![How to use the docker image nocker-wheezy?](http://http://img.youtube.com/vi/8KwZsF7bcfo/maxresdefault.jpg)](http://www.youtube.com/watch?v=8KwZsF7bcfo "How to use the docker image nocker-wheezy?")
+[![How to use the docker image nocker-wheezy?](http://img.youtube.com/vi/8KwZsF7bcfo/maxresdefault.jpg)](http://www.youtube.com/watch?v=8KwZsF7bcfo "How to use the docker image nocker-wheezy?")
 
 ## Clone
 ```
