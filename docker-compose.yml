@@ -8,5 +8,5 @@ services:
     environment:
       NODE_ENV: development
     ports:
-      - 3000:3000
+      - 3005:2999 # - host's port:container's port
     command: yarn run start
