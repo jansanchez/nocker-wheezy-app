@@ -20,6 +20,11 @@ ENV YARN_PATH /tmp/cache/yarn/
 # Switch to $USER
 USER $USER
 
+# If don't want colors then comment the three lines below...
+ADD ./files/ps1 /tmp/ps1
+RUN sed -i '1s/^/force_color_prompt=yes \n/' $USER_PATH.bashrc
+RUN cat /tmp/ps1 >> $USER_PATH.bashrc
+
 # Yarn Configuration
 RUN mkdir -p $YARN_PATH \
     && yarn config set cache-folder $YARN_PATH

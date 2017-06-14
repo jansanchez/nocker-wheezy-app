@@ -1,0 +1,2 @@
+# Custom bash prompt via kirsle.net/wizards/ps1.html
+export PS1="\[$(tput setaf 5)\] +\[$(tput setaf 4)\]\u\[$(tput setaf 5)\]@\h \[$(tput setaf 3)\]\W\[$(tput setaf 5)\] » \[$(tput sgr0)\]"
