@@ -15,9 +15,14 @@ ENV APP_NAME app
 
 ENV USER_PATH /home/$USER/
 ENV APP_PATH $USER_PATH$APP_NAME/
+ENV YARN_PATH /tmp/cache/yarn/
 
 # Switch to $USER
 USER $USER
+
+# Yarn Configuration
+RUN mkdir -p $YARN_PATH \
+    && yarn config set cache-folder $YARN_PATH
 
 # App Folder
 RUN mkdir -p $APP_PATH \
