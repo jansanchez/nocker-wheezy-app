@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./*.js --exec babel-node --presets es2015,stage-2",
-    "browser": "browser-sync start --server --index 'index.js' --files '*.js' --ghostMode 'false'"
+    "browser": "browser-sync start --proxy 'http://localhost:3005'"
   },
   "keywords": [],
   "author": "",
