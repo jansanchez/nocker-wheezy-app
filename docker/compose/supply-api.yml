@@ -1,9 +1,0 @@
-version: '2'
-
-services:
-  dependencies:
-    image: node/api-jobs
-    command: yarn install
-    volumes:
-      - ~/yarn_cache/:/tmp/cache/yarn/
-      - ../../source/api/:/home/jan/app/ # replace '__YOUR_HOST_USER__' for the name of your host user

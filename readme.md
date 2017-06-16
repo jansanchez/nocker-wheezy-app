@@ -1,64 +1,106 @@
-# **api-with-loopback**
+# **nocker-wheezy-app**
 
-API REST build with Loopback.io (NodeJS).
+A Boilerplate for a Simple Express Web Application build in Docker.
 
+*Includes:*
+- Docker
+- Docker Compose
+- NodeJS
+- Yarn
+- Nodemon
+- ES2015
+- Makefile
+
+## Clone
 ```
-git clone git@github.com:jansanchez/api-with-loopback.git nodeapi
+git clone git@github.com:jansanchez/nocker-wheezy-app.git
 ```
 
+## How to use with Docker Compose (video)
+
+[![How to use the docker image nocker-wheezy?](http://img.youtube.com/vi/8KwZsF7bcfo/maxresdefault.jpg)](http://www.youtube.com/watch?v=8KwZsF7bcfo "How to use the docker image nocker-wheezy?")
+
+
+### Set your local user (Very Important)
+
+How do I know my linux username?
 ```
-cd jobs
+whoami
 ```
 
-## Install
+Go to `./docker/compose/supply.yml` and edit the line 9, replacing `your_host_user` for your linux username
+```
+1: version: '2'
+2:
+3: services:
+4:   deps:
+5:     image: js/node
+6:     command: yarn install
+7:     volumes:
+8:       - ~/yarn_cache/:/tmp/cache/yarn/
+9:       - ../../source/:/home/your_host_user/app/
+```
+
+
+### Build & Install dependencies
+```
+./docker/scripts/setup.sh
+```
+
+### Up
+```
+docker-compose up
+```
+
+### So, Open your browser...
+[http://localhost:3005](http://localhost:3005)
+
+### Down
+```
+docker-compose down
+```
+
+### Only Build
+```
+./docker/scripts/build.sh
+```
+
+### Only Install dependencies
+```
+./docker/scripts/supply.sh
+```
+
+## Using the Makefile
+
+### Build & Install dependencies
 ```
 make setup
 ```
 
-## Up
+### Up
 ```
 make up
 ```
 
-## Up with logs
+### So, Open your browser...
+[http://localhost:3005](http://localhost:3005)
+
+### Down
 ```
-make uplog
+make down
 ```
 
-## Run Api container with bash
+### Only Build
 ```
-docker-compose run api bash
-```
-
-## Migration with docker exec
-```
-docker exec -i apiwithloopback_mysql_1 mysql -uroot -p123456 < ./db/wsa.sql
+make build
 ```
 
-## Loopback app
+### Only Install dependencies
 ```
-lb
-```
-
-## Loopback models
-```
-lb model
+make install
 ```
 
-## Loopback datasources
+### Help
 ```
-lb datasource
+make
 ```
-
-## API explorer
-- [http://localhost:3000/explorer](http://localhost:3000/explorer)
-
-## API explorer
-- [http://localhost:3000/api/companies](http://localhost:3000/api/companies)
-
-## API explorer
-- [http://localhost:3000/api/companies?filter={"where":{"slug":"prosegur"}}](http://localhost:3000/api/companies?filter={"where":{"slug":"prosegur"}})
-
-## Paths
-- DB: ./db/wsa.sql
-- Collection: ./source/api/insomnia/wsa.json
