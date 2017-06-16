@@ -6,4 +6,4 @@ services:
     command: yarn install
     volumes:
       - ~/yarn_cache/:/tmp/cache/yarn/
-      - ../../source/app/:/home/jan/app/ # replace '__YOUR_HOST_USER__' for the name of your host user
+      - ../../source/app/:/home/__YOUR_HOST_USER__/app/ # replace '__YOUR_HOST_USER__' for the name of your host user
