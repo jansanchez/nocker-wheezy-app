@@ -85,6 +85,23 @@ make up
 ### So, Open your browser...
 [http://localhost:3005](http://localhost:3005)
 
+### Command
+```
+make command "yarn upgrade"
+```
+
+```
+make command "yarn install"
+```
+
+```
+make command "yarn add express"
+```
+
+```
+make command "yarn add -SD browser-sync"
+```
+
 ### Down
 ```
 make down

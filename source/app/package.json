@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./index.js --exec babel-node --presets es2015,stage-2"
+    "start": "nodemon ./*.js --exec babel-node --presets es2015,stage-2",
+    "browser": "browser-sync start --server --index 'index.js' --files '*.js' --ghostMode 'false'"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +14,7 @@
     "babel-cli": "^6.24.0",
     "babel-preset-es2015": "^6.24.0",
     "babel-preset-stage-2": "^6.22.0",
+    "browser-sync": "^2.18.12",
     "nodemon": "^1.11.0"
   },
   "dependencies": {

@@ -9,6 +9,9 @@ build: ## Build images
 install: ## Install dependencies
 	sh ./docker/scripts/supply.sh
 
+command: ## exec bash command
+	sh ./docker/scripts/bash.sh "$(filter-out $@,$(MAKECMDGOALS))"
+
 up: ## Up services
 	docker-compose up -d
 
