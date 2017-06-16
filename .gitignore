@@ -57,7 +57,5 @@ typings/
 .volumes/
 .DS_Store
 
-
 # Yarn
 .yarn-integrity
-yarn.lock
