@@ -1,7 +1,7 @@
 version: '2'
 
 services:
-  deps:
+  dependencies:
     image: js/node
     command: yarn install
     volumes:

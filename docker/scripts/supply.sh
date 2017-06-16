@@ -10,7 +10,7 @@ if [ ! -d $YARN_CACHE_DIR ]; then
 fi
 
 if [ -z "$ARGS" ]; then
-  ARGS=deps
+  ARGS=dependencies
 fi
 
 # supply
