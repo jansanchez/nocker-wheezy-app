@@ -1,106 +1,64 @@
-# **nocker-wheezy-app**
+# **api-with-loopback**
 
-A Boilerplate for a Simple Express Web Application build in Docker.
+API REST build with Loopback.io (NodeJS).
 
-*Includes:*
-- Docker
-- Docker Compose
-- NodeJS
-- Yarn
-- Nodemon
-- ES2015
-- Makefile
-
-## Clone
 ```
-git clone git@github.com:jansanchez/nocker-wheezy-app.git
+git clone git@github.com:jansanchez/api-with-loopback.git nodeapi
 ```
 
-## How to use with Docker Compose (video)
-
-[![How to use the docker image nocker-wheezy?](http://img.youtube.com/vi/8KwZsF7bcfo/maxresdefault.jpg)](http://www.youtube.com/watch?v=8KwZsF7bcfo "How to use the docker image nocker-wheezy?")
-
-
-### Set your local user (Very Important)
-
-How do I know my linux username?
 ```
-whoami
+cd jobs
 ```
 
-Go to `./docker/compose/supply.yml` and edit the line 9, replacing `your_host_user` for your linux username
-```
-1: version: '2'
-2:
-3: services:
-4:   deps:
-5:     image: js/node
-6:     command: yarn install
-7:     volumes:
-8:       - ~/yarn_cache/:/tmp/cache/yarn/
-9:       - ../../source/:/home/your_host_user/app/
-```
-
-
-### Build & Install dependencies
-```
-./docker/scripts/setup.sh
-```
-
-### Up
-```
-docker-compose up
-```
-
-### So, Open your browser...
-[http://localhost:3005](http://localhost:3005)
-
-### Down
-```
-docker-compose down
-```
-
-### Only Build
-```
-./docker/scripts/build.sh
-```
-
-### Only Install dependencies
-```
-./docker/scripts/supply.sh
-```
-
-## Using the Makefile
-
-### Build & Install dependencies
+## Install
 ```
 make setup
 ```
 
-### Up
+## Up
 ```
 make up
 ```
 
-### So, Open your browser...
-[http://localhost:3005](http://localhost:3005)
-
-### Down
+## Up with logs
 ```
-make down
+make uplog
 ```
 
-### Only Build
+## Run Api container with bash
 ```
-make build
-```
-
-### Only Install dependencies
-```
-make install
+docker-compose run api bash
 ```
 
-### Help
+## Migration with docker exec
 ```
-make
+docker exec -i apiwithloopback_mysql_1 mysql -uroot -p123456 < ./db/wsa.sql
 ```
+
+## Loopback app
+```
+lb
+```
+
+## Loopback models
+```
+lb model
+```
+
+## Loopback datasources
+```
+lb datasource
+```
+
+## API explorer
+- [http://localhost:3000/explorer](http://localhost:3000/explorer)
+
+## API explorer
+- [http://localhost:3000/api/companies](http://localhost:3000/api/companies)
+
+## API explorer
+- [http://localhost:3000/api/companies?filter={"where":{"slug":"prosegur"}}](http://localhost:3000/api/companies?filter={"where":{"slug":"prosegur"}})
+
+## Paths
+- DB: ./db/wsa.sql
+- Collection: ./source/api/insomnia/wsa.json

@@ -1,12 +1,32 @@
 version: '2'
 
 services:
-  app:
+  api:
     extends:
-      file: ./docker/compose/supply.yml
-      service: deps
+      file: ./docker/compose/supply-api.yml
+      service: dependencies
     environment:
       NODE_ENV: development
     ports:
-      - 3005:2999 # - host's port:container's port
+      - 3005:2999
     command: yarn run start
+  mysql:
+    image: lucydb
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_USER: root
+      MYSQL_DATABASE: jobs
+    ports:
+      - 3307:3306
+    volumes:
+      - .volumes/mysql:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: jobs_mysql_1 # db host
+      PMA_USER: root
+      PMA_PASSWORD: 123456
+    ports:
+      - 88:80
+    depends_on:
+      - mysql

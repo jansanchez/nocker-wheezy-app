@@ -1,11 +1,15 @@
 version: '2'
 
 services:
-  nodejs:
-    image: js/node
+  nodeapi:
+    image: node/api-jobs
     build:
       context: ../recipes/node/
       args:
         USER: ${ENV_USER}
         GID: ${ENV_GID}
         UID: ${ENV_UID}
+  mysql:
+    image: lucydb
+    build:
+      context: ../recipes/lucydb/

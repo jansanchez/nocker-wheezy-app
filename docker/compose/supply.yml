@@ -1,9 +1,0 @@
-version: '2'
-
-services:
-  deps:
-    image: js/node
-    command: yarn install
-    volumes:
-      - ~/yarn_cache/:/tmp/cache/yarn/
-      - ../../source/:/home/__YOUR_HOST_USER__/app/ # replace '__YOUR_HOST_USER__' for the name of your host user

@@ -6,6 +6,8 @@ ARG USER
 ARG GID
 ARG UID
 
+RUN yarn global add loopback-cli
+
 # Create a new group account with Args
 RUN groupadd --gid $GID $USER \
   && useradd --uid $UID --gid $USER --shell /bin/bash --create-home $USER

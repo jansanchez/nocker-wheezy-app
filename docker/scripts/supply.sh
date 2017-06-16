@@ -9,9 +9,15 @@ if [ ! -d $YARN_CACHE_DIR ]; then
   chmod -R 775 $YARN_CACHE_DIR
 fi
 
-if [ -z "$ARGS" ]; then
-  ARGS=deps
+if [ ! -d .volumes ]; then
+  echo "Creating ... .volumes folder."
+  mkdir .volumes
+  chmod -R 775 .volumes
 fi
 
-# supply
-docker-compose -f ./docker/compose/supply.yml run --user $(whoami) --rm $ARGS
+if [ -z "$ARGS" ]; then
+  ARGS=dependencies
+fi
+
+# supply-api
+docker-compose -f ./docker/compose/supply-api.yml run --user $(whoami) --rm $ARGS
