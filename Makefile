@@ -13,7 +13,7 @@ command: ## exec bash command
 	sh ./docker/scripts/bash.sh "$(filter-out $@,$(MAKECMDGOALS))"
 
 up: ## Up services
-	docker-compose up -d
+	docker-compose up
 
 uplog: ## Up services with logs
 	docker-compose up
