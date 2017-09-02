@@ -2,7 +2,7 @@ version: '2'
 
 services:
   dependencies:
-    image: js/node
+    image: js/node-wheezy
     command: yarn install
     volumes:
       - ~/yarn_cache/:/tmp/cache/yarn/

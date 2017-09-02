@@ -2,7 +2,7 @@ version: '2'
 
 services:
   nodejs:
-    image: js/node
+    image: js/node-wheezy
     build:
       context: ../recipes/node/
       args:
