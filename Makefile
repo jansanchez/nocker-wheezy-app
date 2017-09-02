@@ -15,8 +15,8 @@ command: ## exec bash command
 up: ## Up services
 	docker-compose up
 
-uplog: ## Up services with logs
-	docker-compose up
+upnolog: ## Up services without logs
+	docker-compose -d
 
 down: ## Stop and remove services
 	docker-compose down

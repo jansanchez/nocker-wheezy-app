@@ -28,17 +28,17 @@ How do I know my linux username?
 whoami
 ```
 
-Go to `./docker/compose/supply.yml` and edit the line 9, replacing `your_host_user` for your linux username
+Go to `./docker/compose/supply.yml` and edit the line 9, replacing `__YOUR_HOST_USER__` for your linux username
 ```
 1: version: '2'
 2:
 3: services:
 4:   deps:
-5:     image: js/node
+5:     image: js/node-wheezy
 6:     command: yarn install
 7:     volumes:
 8:       - ~/yarn_cache/:/tmp/cache/yarn/
-9:       - ../../source/:/home/your_host_user/app/
+9:       - ../../source/:/home/__YOUR_HOST_USER__/app/
 ```
 
 
