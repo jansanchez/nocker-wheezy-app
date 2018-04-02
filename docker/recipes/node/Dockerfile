@@ -1,29 +1,21 @@
 # My Image
 FROM jansanchez/nocker-wheezy
 
-# Declare Arguments
-ARG USER
-ARG GID
-ARG UID
-
-# Create a new group account with Args
-RUN groupadd --gid $GID $USER \
-  && useradd --uid $UID --gid $USER --shell /bin/bash --create-home $USER
-
 # App name
 ENV APP_NAME app
 
-ENV USER_PATH /home/$USER/
+ENV ROOT_PATH /root/
+ENV USER_PATH $ROOT_PATH
 ENV APP_PATH $USER_PATH$APP_NAME/
 ENV YARN_PATH /tmp/cache/yarn/
 
 # Switch to $USER
-USER $USER
+#USER $USER
 
 # If don't want colors then comment the three lines below...
 ADD ./files/ps1 /tmp/ps1
-RUN sed -i '1s/^/force_color_prompt=yes \n/' $USER_PATH.bashrc
-RUN cat /tmp/ps1 >> $USER_PATH.bashrc
+RUN sed -i '1s/^/force_color_prompt=yes \n/' $ROOT_PATH.bashrc
+RUN cat /tmp/ps1 >> $ROOT_PATH.bashrc
 
 # Yarn Configuration
 RUN mkdir -p $YARN_PATH \

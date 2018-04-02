@@ -14,4 +14,4 @@ if [ -z "$ARGS" ]; then
 fi
 
 # supply
-docker-compose -f ./docker/compose/supply.yml run --user $(whoami) --rm $ARGS
+docker-compose -f ./docker/compose/supply.yml run --rm $ARGS

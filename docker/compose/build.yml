@@ -2,10 +2,6 @@ version: '2'
 
 services:
   nodejs:
-    image: js/node-wheezy
+    image: js/node-wheezy-app
     build:
       context: ../recipes/node/
-      args:
-        USER: ${ENV_USER}
-        GID: ${ENV_GID}
-        UID: ${ENV_UID}

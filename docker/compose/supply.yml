@@ -2,8 +2,8 @@ version: '2'
 
 services:
   dependencies:
-    image: js/node-wheezy
+    image: js/node-wheezy-app
     command: yarn install
     volumes:
       - ~/yarn_cache/:/tmp/cache/yarn/
-      - ../../source/app/:/home/__YOUR_HOST_USER__/app/ # replace '__YOUR_HOST_USER__' for the name of your host user
+      - ../../source/app/:/root/app/
